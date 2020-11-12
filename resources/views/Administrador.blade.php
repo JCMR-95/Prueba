@@ -9,6 +9,7 @@
 @section('content')
 
 <body>
+<div class="container">
     <div class="form-row justify-content-center">
         <form action="enviarDatos" method="post">
             @csrf
@@ -42,4 +43,7 @@
     <div class="form-row justify-content-center">
         <a href="{{ url('Listado') }}" class="btn btn-xs">Ver Registro</a>
     </div>
+</div>
 </body>
+
+@endsection

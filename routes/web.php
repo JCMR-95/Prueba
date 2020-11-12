@@ -7,7 +7,7 @@ Use Auth;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('PaginaPrincipal');
+    return view('welcome');
 });
 
 Route::get('/home', function () {
@@ -30,10 +30,6 @@ Route::post('enviarDatos', [DatosController::class, 'enviarDatos']);
 
 //Mostrat Datos
 Route::get('Listado', [DatosController::class, 'mostrarDatos']);
-
-//Editar y Actualizar
-Route::get('/Editar/{id}', [DatosController::class, 'editar']);
-Route::post('/actualizarDatos', [DatosController::class, 'actualizar']);
 
 //Eliminar Datos
 Route::get('Eliminar/{id}', [DatosController::class, 'eliminar']);

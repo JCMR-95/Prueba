@@ -9,37 +9,41 @@
 @section('content')
 
 <body>
-    <div class="form-row justify-content-center">
-        <form action="enviarDatos" method="post">
-            @csrf
-            <div>
-                <h5>¿Qué te gustaría que agregaramos al informe?</h5>
-                <textarea name="informe" rows="10" cols="40" placeholder="Escriba su respuesta..."></textarea>
-            </div>
-            <div>
-                <h5>¿La información es correcta?</h5>
-                <select name="confirmacion" id="confirmacion">
-                    <option value="SI">Sí</option>
-                    <option value="NO">No</option>
-                    <option value="Masomenos">Mas o menos</option>
-                </select>
-            </div>
-            <div>
-                <h5>Del 1 al 5 ¿Es rápido el sitio?</h5>
-                <ul class="likert" name ="grado">
-                    <li class="likert"> 1<input type="radio" name="grado" value="1" />
-                    <li class="likert"> 2<input type="radio" name="grado" value="2" />
-                    <li class="likert"> 3<input type="radio" name="grado" value="3" />
-                    <li class="likert"> 4<input type="radio" name="grado" value="4" />
-                    <li class="likert"> 5<input type="radio" name="grado" value="5" />
-                </ul>
-            </div>
+    <div class="container">
+        <div class="form-row justify-content-center">
+            <form action="enviarDatos" method="post">
+                @csrf
+                <div>
+                    <h5>¿Qué te gustaría que agregaramos al informe?</h5>
+                    <textarea name="informe" rows="10" cols="40" placeholder="Escriba su respuesta..."></textarea>
+                </div>
+                <div>
+                    <h5>¿La información es correcta?</h5>
+                    <select name="confirmacion" id="confirmacion">
+                        <option value="SI">Sí</option>
+                        <option value="NO">No</option>
+                        <option value="Masomenos">Mas o menos</option>
+                    </select>
+                </div>
+                <div>
+                    <h5>Del 1 al 5 ¿Es rápido el sitio?</h5>
+                    <ul class="likert" name ="grado">
+                        <li class="likert"> 1<input type="radio" name="grado" value="1" />
+                        <li class="likert"> 2<input type="radio" name="grado" value="2" />
+                        <li class="likert"> 3<input type="radio" name="grado" value="3" />
+                        <li class="likert"> 4<input type="radio" name="grado" value="4" />
+                        <li class="likert"> 5<input type="radio" name="grado" value="5" />
+                    </ul>
+                </div>
 
-            <button type="submit">Enviar Datos</button>
+                <button type="submit">Enviar Datos</button>
 
-        </form>
+            </form>
+        </div>
     </div>
 </body>
+
+@endsection
 
 @if ($message = Session::get('exito'))
     <div class="alert alert-success">

@@ -7,6 +7,12 @@ use DB;
 
 class DatosController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->only('verCargo');
+    }
+
     public function verCargo(Request $request)
     {
         $cargo = $request->cargo;

@@ -8,40 +8,38 @@
 @section('content')
 
 <body>
-    <table class="table table-striped table-sm">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Informe</th>
-            <th scope="col">Confirmación</th>
-            <th scope="col">Grado</th>
-            <th scope="col">Editar</th>
-            <th scope="col">Eliminar</th>
+    <div class="container">
+        <table class="table table-striped table-sm">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Informe</th>
+                <th scope="col">Confirmación</th>
+                <th scope="col">Grado</th>
+                <th scope="col">Eliminar</th>
 
-        </tr>
-        </thead>
-        <tbody id="myTable">
-            @foreach($datos as $dato)
-                <tr>
-                    <th scope="row">{!! $dato->id !!}</th>
-                    <td scope="row">{!! $dato->informe !!}</td>
-                    <td scope="row">{!! $dato->confirmacion !!}</td>
-                    <td scope="row">{!! $dato->grado !!}</td>
-                    <td>
-                        <a href="/Editar/{{$dato->id}}" class="btn btn-primary">
-                            Editar
-                        </a>
-                    </td>
-                    <td>
-                        <a href="/Eliminar/{{$dato->id}}" class="btn btn-primary">
-                            Eliminar
-                        </a>
-                    <td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+            </tr>
+            </thead>
+            <tbody id="myTable">
+                @foreach($datos as $dato)
+                    <tr>
+                        <th scope="row">{!! $dato->id !!}</th>
+                        <td scope="row">{!! $dato->informe !!}</td>
+                        <td scope="row">{!! $dato->confirmacion !!}</td>
+                        <td scope="row">{!! $dato->grado !!}</td>
+                        <td>
+                            <a href="/Eliminar/{{$dato->id}}" class="btn btn-primary">
+                                Eliminar
+                            </a>
+                        <td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </body>
+
+@endsection
 
 @if ($message = Session::get('exito'))
     <div class="alert alert-success">

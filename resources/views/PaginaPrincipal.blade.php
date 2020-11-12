@@ -9,6 +9,7 @@
 @section('content')
 
 <body>
+<div class="container">
     <div class="form-row justify-content-center">
         <form action="verCargo" method="post">
             @csrf
@@ -24,5 +25,7 @@
             <button type="submit">Confirmar</button>
 
         </form>
-
+</div>
 </body>
+
+@endsection
