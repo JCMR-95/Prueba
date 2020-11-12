@@ -9,6 +9,7 @@
 
 <body>
     <div class="container">
+        <h3>Envíos realizados<h3/>
         <table class="table table-striped table-sm">
             <thead class="thead-dark">
             <tr>
