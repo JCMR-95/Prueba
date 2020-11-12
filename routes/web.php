@@ -7,11 +7,11 @@ Use Auth;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('PaginaPrincipal')->middleware('auth');
+    return view('PaginaPrincipal');
 });
 
 Route::get('/home', function () {
-    return view('PaginaPrincipal')->middleware('auth');
+    return view('PaginaPrincipal');
 });
 
 Route::get('/Usuario', function () {
@@ -21,6 +21,9 @@ Route::get('/Usuario', function () {
 Route::get('/Administrador', function () {
     return view('Administrador');
 });
+
+//¿Administrador o Usuario?
+Route::post('verCargo', [DatosController::class, 'verCargo']);
 
 //Enviar Datos
 Route::post('enviarDatos', [DatosController::class, 'enviarDatos']);

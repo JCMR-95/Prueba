@@ -7,7 +7,18 @@ use DB;
 
 class DatosController extends Controller
 {
-    
+    public function verCargo(Request $request)
+    {
+        $cargo = $request->cargo;
+        
+        if($cargo == 'Administrador'){
+            return view('Administrador');
+        }else{
+            return view('Usuario');
+        }
+
+    }
+
     public function enviarDatos(Request $request)
     {
         $informe = $request->informe;
